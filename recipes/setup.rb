@@ -84,7 +84,7 @@ end
 docker_container 'haproxy_lb' do
     repo 'haproxy'
     tag 'alpine'
-    port ['80:80', '443:443']
+    port ['80:80', '443:443','9000:9000']
     volumes ['/etc/haproxy:/usr/local/etc/haproxy', '/etc/ssl:/usr/local/etc/ssl']
     privileged false
     network_mode 'internal'

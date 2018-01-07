@@ -35,7 +35,8 @@ backend nodes
 listen stats # Define a listen section called "stats"
     bind :9000
     mode http
-    stats enable 
+    stats enable
+    stats refresh 30
     stats hide-version
     stats realm Haproxy\ Statistics
     stats uri /haproxy_stats
