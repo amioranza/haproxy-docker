@@ -33,11 +33,11 @@ backend nodes
     server web01 jenkins:8080 check
 
 listen stats # Define a listen section called "stats"
-    bind :9000
+    bind :<%= @stats_port %>
     mode http
     stats enable
     stats refresh 30
     stats hide-version
     stats realm Haproxy\ Statistics
     stats uri /haproxy_stats
-    stats auth admin:password
+    stats auth <%= @stats_user %>:<%= @stats_pass %>
